@@ -144,7 +144,9 @@ elseif ( ANDROID )
     target_link_libraries(puerts
         ${log-lib}
     )
-
+    
+    target_compile_definitions (puerts PRIVATE WITH_INSPECTOR)
+    
     if( ANDROID_ABI STREQUAL "armeabi-v7a")
         # link
         foreach(LIB_FILE_NAME IN LISTS LIB_FILE_NAMES)
